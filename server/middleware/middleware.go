@@ -98,8 +98,7 @@ func CreateCase(w http.ResponseWriter, r *http.Request) {
 		// FormFile returns the first file for the given key `myFile`
 		file, _, err := r.FormFile("myFile")
 		if err != nil {
-			fmt.Println("Error Retrieving the File")
-			fmt.Println(err)
+			log.Fatal(err)
 			return
 		}
 		defer file.Close()
@@ -107,13 +106,13 @@ func CreateCase(w http.ResponseWriter, r *http.Request) {
 		// Create a temporary file within our temp-images directory that follows a particular naming pattern
 		tempFile, err := ioutil.TempFile("temp-images", "upload-*.png")
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 		}
 		defer tempFile.Close()
 		// read all of the contents of our uploaded file into a byte array
 		fileBytes, err := ioutil.ReadAll(file)
 		if err != nil {
-			fmt.Println(err)
+			log.Fatal(err)
 		}
 		// write this byte array to our temporary file
 		tempFile.Write(fileBytes)
@@ -191,7 +190,6 @@ func insertOneOfficer(officer models.PoliceOfficer) {
 
 	officer.ID = insertResult.InsertedID.(primitive.ObjectID)
 	caseToBeAssigned := getFreeCase()
-	fmt.Println(caseToBeAssigned)
 	if !primitive.ObjectID.IsZero(caseToBeAssigned.ID) {
 		updateOfficerStatus(officer.ID, true)
 		assignOfficer(caseToBeAssigned.ID, officer.ID)
@@ -272,7 +270,6 @@ func getFreeCase() models.Cases {
 		if e != nil {
 			log.Fatal(e)
 		}
-		fmt.Println(result)
 		x := result.ReportedTime
 		if reportedTime > x {
 			reportedTime = x

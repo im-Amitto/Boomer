@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "9c292110-7c9b-478c-8fe2-52abbcd67ad3",
+		"name": "Boomer-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add New Case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "myFile",
+							"type": "file",
+							"src": "/home/heisenbrerg/Desktop/download.jpeg"
+						},
+						{
+							"key": "vehicleNumber",
+							"value": "KA-03-HA-1919",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/case",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"case"
+					]
+				},
+				"description": "Create a new case and return success/error message"
+			},
+			"response": [
+				{
+					"name": "We already have a open case for the vehicle number",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/home/heisenbrerg/Desktop/download.jpeg"
+								},
+								{
+									"key": "vehicleNumber",
+									"value": "KA-03-HA-19199",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/case",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"case"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Context-Type",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Apr 2020 13:26:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\"msg\":\"Case Already Exist\"}\n"
+				},
+				{
+					"name": "Case added successfully",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/home/heisenbrerg/Desktop/download.jpeg"
+								},
+								{
+									"key": "vehicleNumber",
+									"value": "KA-03-HA-19199",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/case",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"case"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Context-Type",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Apr 2020 13:25:48 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\"msg\":\"Case Registered Successfully\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Add New Officer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"name\":\"Amit Meena\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/officer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"officer"
+					]
+				},
+				"description": "Add a new officer and returns the complete officer details"
+			},
+			"response": [
+				{
+					"name": "Officer added",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"Amit Meena\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/officer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"officer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Context-Type",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Apr 2020 13:26:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\"msg\":\"Officer added successfully\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Complete Case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"_id\":\"5e982ac65183a062be160683\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3200/api/caseComplete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"caseComplete"
+					]
+				},
+				"description": "Marks the case as completed and returns the success/error message along with an updated cases list"
+			},
+			"response": [
+				{
+					"name": "case set to completed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5e985cce49ef0de3753d1aa2\",\n    \"vehiclenumber\": \"1111111111111111111111111\",\n    \"assignedofficer\": \"5e985d1b49ef0de3753d1aa4\",\n    \"reportedtime\": \"2020-04-16 18:55:34.630311224 +0530 IST m=+2.792815063\",\n    \"image\": \"temp-images/upload-380635653.png\",\n    \"status\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/caseComplete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"caseComplete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "POST"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/x-www-form-urlencoded"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 16 Apr 2020 13:28:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						}
+					],
+					"cookie": [],
+					"body": "{\"msg\":\"Case Successfully Solved\"}\n"
+				}
+			]
+		},
+		{
+			"name": "Fetch All Cases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/case",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"case"
+					]
+				},
+				"description": "Return all registered cases"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch All Officer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3200/api/officer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3200",
+					"path": [
+						"api",
+						"officer"
+					]
+				},
+				"description": "Returns all registered officer"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -26,6 +26,9 @@ You can see your application at `htttp://localhost:{port-number}/` by default it
 Postman collection can be found at `postman/Boomer-API.postman_collection.json`
 
 ### App demonstration
+Link: https://www.loom.com/share/08bf6c62a6a84554ab7c19840f6c7285
+
+
 <video width="320" height="240" controls>
   <source src="https://www.loom.com/share/08bf6c62a6a84554ab7c19840f6c7285" type="video/mp4">
 </video>
